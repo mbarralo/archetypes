@@ -1,0 +1,20 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+     
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d [%thread] %-5level %logger{20} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    
+    <logger name="org.apache.camel" level="INFO"/>
+    <logger name="org.jboss.weld" level="INFO"/>
+ 
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
